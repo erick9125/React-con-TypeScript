@@ -8,8 +8,8 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
-    resolver: {
-        extensions: ['.ts', '.tsx', 'js', 'jsx' , 'json']
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx' , '.json']
     },
     module: {
         rules: [
