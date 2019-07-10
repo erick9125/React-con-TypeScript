@@ -10,7 +10,7 @@ class TaskList extends React.Component<ITaskListPros,any> {
                     <div className="card card-body">
                     <h3>{task.titulo}</h3>
                     <p>{task.descripcion}</p>
-                    <button className="btn btn-danger btn-block">Eliminar</button>
+                    <button className="btn btn-danger btn-block" onClick={() => this.props.deleteATask(task.id)}>Eliminar</button>
                     </div>
                 </div>
             )
@@ -20,7 +20,8 @@ class TaskList extends React.Component<ITaskListPros,any> {
 }
 
 interface ITaskListPros {
-    tasks: Task[]
+    tasks: Task[];
+    deleteATask: (id: number) => void;
 }
 
 export default TaskList;
