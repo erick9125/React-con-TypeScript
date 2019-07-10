@@ -23,8 +23,8 @@ class TaskForm extends React.Component<MiTarea, any> {
             descripcion: this.state.descripcion,
             completado: false
         };
-        //this.props.addANewTask();
-        console.log(nuevaTarea)
+        this.props.addANewTask(nuevaTarea);
+        this.setState({titulo:'', descripcion: ''});
     }
 
     handleInputChange(e: React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>){
@@ -40,10 +40,10 @@ class TaskForm extends React.Component<MiTarea, any> {
             <div className="card card-body">
                 <form onSubmit={e => this.nuevaTarea(e)}>
                     <div className="form-group">
-                        <input type="text" name="titulo" onChange={e => this.handleInputChange(e)} className="form-control" placeholder="Titulo" />
+                        <input type="text" name="titulo" onChange={e => this.handleInputChange(e)} className="form-control" placeholder="Titulo" value={this.state.titulo} />
                     </div>
                     <div className="form-group">
-                        <textarea name="descripcion" onChange={e => this.handleInputChange(e)} className="form-control" placeholder="Descripción"></textarea>
+                        <textarea name="descripcion" onChange={e => this.handleInputChange(e)} className="form-control" placeholder="Descripción" value={this.state.descripcion}></textarea>
                     </div>
                     <div className="form-group">
                          <button type="submit" className="btn btn-success btn-block">Guardar</button>
